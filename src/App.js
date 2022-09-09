@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import { Component } from "react"
+import { connect } from 'react-redux';
+import { fetchCategories } from './redux/categoriesReducer'
+import { fetchProfile } from './redux/profileReducer'
+import { fetchWeapon } from './redux/weaponReducer'
+import { Route, Routes } from "react-router-dom";
+import Layout from "./Layout/Layout"
+import Index from "./components/Index/Index"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component  {
+  
+  componentDidMount() {
+    this.props.fetchCategories()
+    this.props.fetchProfile()
+    this.props.fetchWeapon()
+  }
+
+  render() {
+    return (
+      <Routes>
+        <Route path={'/'} element={<Layout/> }>
+          <Route path={"/"} element={<Index/>}/>
+          <Route path={"category/:category/"} element={<Index/>}/>
+          <Route path={"category/:category/:id"} element={<Index/>}/>
+        </Route>
+      </Routes>
+    )
+  }
 }
 
-export default App;
+const mapDispatchToProps = {fetchCategories, fetchProfile, fetchWeapon}
+
+
+export default connect(
+  state => ({}),
+  mapDispatchToProps
+)(App)
+
+

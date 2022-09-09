@@ -1,0 +1,30 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-bottom: 20px;
+    
+    &__title {
+        color: #fff;
+        font-weight: 400;
+        margin: 0;
+    }
+    &__balance {
+        display: flex;
+        align-items: center;
+    }
+    &__icon {
+        font-size: 0;
+        width: 20px;
+        height: 20px;
+        margin-right: 5px;
+    }
+    &__item {
+        display: flex;
+        align-items: flex-end;
+        color: #fff;
+        &:not(:last-child) {
+            margin-right: 20px;
+        }
+    }
+}

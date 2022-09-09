@@ -1,0 +1,33 @@
+.nav {
+    border-top: 2px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+    padding: 20px 0;
+    display: flex;
+    margin-bottom: 20px;
+    &__items {
+        display: flex;
+        margin-right: 50px;
+        width: 95%;
+    }
+    &__close {
+        width: 36px;
+    }
+    &__item {
+        flex: 1 1 150px;
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        &:hover {
+            background: #fff;
+            color: #000;
+        }
+        &:not(:last-child) {
+            margin-right: 20px;
+        }
+        &_active {
+            background: #fff;
+            color: #000;
+            cursor: pointer;
+        }
+    }
+}

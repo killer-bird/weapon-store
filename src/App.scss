@@ -1,0 +1,23 @@
+.app {
+  width: 1400px;
+  height: 800px;
+  background: rgb(78, 78, 78);
+  border-radius: 40px;
+  max-height: 1200px;
+  padding: 40px;
+  position: relative;
+
+  &__wrapper {
+    background: #fff;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+
+
+
+
