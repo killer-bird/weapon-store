@@ -10,8 +10,16 @@ class WeaponList extends Component {
 
     render() {
         const { weapon, loader, category } = this.props
+        console.log(category)
         if(loader) {
-            return <h2>Loading...</h2>
+            return <div className="weapon-list__wrapper">
+                        <h2>Loading...</h2>
+                    </div>
+        }
+        if(!category) {
+            return <div className="weapon-list__wrapper">
+                        <h2>Выберите категорию</h2>
+                    </div>
         }
         return (
             <div className="weapon-list__wrapper">
